@@ -28,7 +28,7 @@ public class Handler {
 		this.cam = cam;
 		
 	BufferedImageLoader loader = new BufferedImageLoader();
-	level2 = loader.loadImage("/level1.png");
+	level2 = loader.loadImage("/level1.png"); // loads the png for level 1
 	
 	}
 	
@@ -49,7 +49,7 @@ public class Handler {
 	}
 	
 	public void LoadImageLevel(BufferedImage image) {
-		int h = image.getHeight();
+		int h = image.getHeight(); 
 		int w = image.getWidth();
 		
 		System.out.println("width, height: " + w + " " + h);
@@ -63,22 +63,22 @@ public class Handler {
 				// finds the RGB level of every pixel
 				if(red == 255 && green == 255 && blue == 255)  addObject(new Block(xx*32, yy*32, 0, ObjectId.Block)); // replaces white pixels with dirt
 				if(red == 64 && green == 64 && blue == 64)  addObject(new Block(xx*32, yy*32, 1, ObjectId.Block)); // replaces grey pixels with grass
-				if(red == 0 && green == 255 && blue == 255)  addObject(new Block(xx*32, yy*32, 2, ObjectId.Block));
-				if(red == 0 && green == 38 && blue == 255)  addObject(new Block(xx*32, yy*32, 3, ObjectId.Block)); //
+				if(red == 0 && green == 255 && blue == 255)  addObject(new Block(xx*32, yy*32, 2, ObjectId.Block)); // replaces turquoise with 
+				if(red == 0 && green == 38 && blue == 255)  addObject(new Block(xx*32, yy*32, 3, ObjectId.Block)); // replaces dark blue with 
 				if(red == 178 && green == 0 && blue == 255)  addObject(new Block(xx*32, yy*32, 4, ObjectId.Block)); //replaces magenta pixels right end of platform
 				
-				if(red == 125 && green == 0 && blue == 55)  addObject(new InfoBlock(xx*32, yy*32, 5, ObjectId.InfoBlock));
+				if(red == 125 && green == 0 && blue == 55)  addObject(new InfoBlock(xx*32, yy*32, 5, ObjectId.InfoBlock)); // replaces bordeaux with "info block"
 				
-				if(red == 255 && green == 0 && blue == 0) addObject(new DeathBlock(xx*32, yy*32, 0, ObjectId.DeathBlock));
-				if(red == 0 && green == 255 && blue == 0) addObject(new DeathBlock(xx*32, yy*32, 1, ObjectId.DeathBlock));
+				if(red == 255 && green == 0 && blue == 0) addObject(new DeathBlock(xx*32, yy*32, 0, ObjectId.DeathBlock)); // replaces red with
+				if(red == 0 && green == 255 && blue == 0) addObject(new DeathBlock(xx*32, yy*32, 1, ObjectId.DeathBlock)); // replaces green with 
 				
-				if(red == 255 && green == 216 && blue == 0) addObject(new Coin(xx*32, yy*32, 0, ObjectId.Coin));
+				if(red == 255 && green == 216 && blue == 0) addObject(new Coin(xx*32, yy*32, 0, ObjectId.Coin)); // replaces yellow with "coin" image
 				
-				if(red == 125 && green == 55 && blue == 15) addObject(new Goomba(xx*32, yy*32, 0, this, ObjectId.Enemy));
+				if(red == 125 && green == 55 && blue == 15) addObject(new Goomba(xx*32, yy*32, 0, this, ObjectId.Enemy)); // replaces brown with "goombas"
 				
-				if(red == 0 && green == 0 && blue == 255)  addObject(new Player(xx*32, yy*32, this, cam, ObjectId.Player));
+				if(red == 0 && green == 0 && blue == 255)  addObject(new Player(xx*32, yy*32, this, cam, ObjectId.Player)); // replaces blue with "Alex"
 				
-				if(red == 0 && green == 127 && blue == 14)  addObject(new Flag(xx*32, yy*32, ObjectId.Flag));
+				if(red == 0 && green == 127 && blue == 14)  addObject(new Flag(xx*32, yy*32, ObjectId.Flag)); // replaces dark green with 
 			}
 		}
 		
@@ -110,5 +110,3 @@ public class Handler {
 	
 		
 }
-	
-
